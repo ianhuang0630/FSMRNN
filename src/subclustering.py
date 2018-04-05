@@ -78,7 +78,7 @@ def f (matrix, rng, delt, col=0):
         return counts
         
 
-def entropy_based(states, rng=(0.0, 1.0), delt=0.1, random_seed=None):
+def entropy_based(states, rng=(-1.0, 1.0), delt=0.1, random_seed=None):
     """ Entropy_based metric, based on:
     http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.33.1465&rep=rep1&type=pdf
     """
@@ -163,6 +163,8 @@ def bruteforce_prunesubspace(hid_states, delt=0.1, parallel=False,
         # generate tuple 
         neuron_combos = []
         print("Calculating combinations")
+        
+        # TODO: use multiprocessing in generating neuron combos too?
         for i in range(1, num_neurons + 1):
             for j in combinations(column_indices, i):
                 # j is a tuple
@@ -240,9 +242,7 @@ def bruteforce_clusterfirst(hid_states, metric, cluster_func, threshold):
     metric_per_subspace = {}
 
     num_neurons = hid_states.shape[1]
-
     column_indices = range(num_neurons)
-    
     known_failures = set([])
     
     # TODO: adding to subspace_clusters

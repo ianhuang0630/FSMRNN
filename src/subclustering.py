@@ -5,15 +5,6 @@ from sklearn.metrics import silhouette_score
 from FSMextractor import SampleBasedTransExtractor
 from tqdm import tqdm
 from multiprocessing import Pool
-from pathos.multiprocessing import ProcessingPool
-from pathos.multiprocessing import ProcessingPool
-from pathos.multiprocessing import ProcessingPool
-from pathos.multiprocessing import ProcessingPool
-from pathos.multiprocessing import ProcessingPool
-from pathos.multiprocessing import ProcessingPool
-from pathos.multiprocessing import ProcessingPool
-from pathos.multiprocessing import ProcessingPool
-from pathos.multiprocessing import ProcessingPool
 
 def default_metric(states, labels, random_seed=None):
     """ Returning the silhouette coefficient.

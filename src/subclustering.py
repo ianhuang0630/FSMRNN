@@ -162,7 +162,7 @@ def bruteforce_prunesubspace(hid_states, delt=0.1, parallel=False,
         ACT_MAT = hid_states
         # generate tuple 
         neuron_combos = []
-
+        print("Calculating combinations")
         for i in range(1, num_neurons + 1):
             for j in combinations(column_indices, i):
                 # j is a tuple
@@ -171,6 +171,7 @@ def bruteforce_prunesubspace(hid_states, delt=0.1, parallel=False,
 
         delt_list = [delt] * len(neuron_combos)
     
+        print("Starting multiprocessing:")
         p = Pool(processes = num_process)
         # p = ProcessingPool()
 
